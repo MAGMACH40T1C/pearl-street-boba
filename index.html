@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pearl Street Boba</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 1.5rem;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #222;
+      background: #f7f7f7;
+    }
+
+    h1 {
+      margin: 0 0 0.35rem;
+      font-size: 2rem;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      max-width: 56rem;
+      margin: 0 auto 1.5rem;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #d8e6dc;
+    }
+
+    .site-name {
+      color: #26734d;
+      font-weight: bold;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    nav a {
+      color: #26734d;
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 42rem) {
+      header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    .hero {
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      background: #e8f3ec;
+      border-radius: 0.5rem;
+    }
+
+    .hero-image,
+    .about-image {
+      display: block;
+      width: 100%;
+      max-width: 36rem;
+      margin: 1rem 0;
+      border-radius: 0.5rem;
+    }
+
+    .hero p {
+      margin-bottom: 1rem;
+    }
+
+    .hero a {
+      display: inline-block;
+      padding: 0.6rem 1rem;
+      color: #fff;
+      background: #26734d;
+      border-radius: 0.25rem;
+      text-decoration: none;
+    }
+
+    .menu-images {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 1rem 0 1.25rem;
+    }
+
+    .menu-images img {
+      width: 10rem;
+      height: 8rem;
+      object-fit: cover;
+      border-radius: 0.35rem;
+    }
+
+    h2 {
+      margin: 1.75rem 0 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .menu-cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      max-width: 56rem;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .info-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      max-width: 56rem;
+      margin: 1.75rem 0;
+    }
+
+    .info-block {
+      padding: 1rem;
+      background: #fff;
+      border: 1px solid #e1e1e1;
+      border-radius: 0.5rem;
+    }
+
+    .info-block h2 {
+      margin-top: 0;
+    }
+
+    .compact-list {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 42rem) {
+      .menu-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .info-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 30rem) {
+      .menu-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .menu-card {
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid #e1e1e1;
+      border-radius: 0.5rem;
+    }
+
+    .menu-card img {
+      display: block;
+      width: 100%;
+      height: 9rem;
+      object-fit: cover;
+    }
+
+    .menu-card-content {
+      padding: 1rem;
+    }
+
+    .menu-card h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1.05rem;
+    }
+
+    .menu-card p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    p {
+      margin: 0 0 0.65rem;
+      max-width: 36rem;
+    }
+
+    ul {
+      margin: 0 0 0.75rem;
+      padding-left: 1.25rem;
+    }
+
+    li {
+      margin-bottom: 0.25rem;
+    }
+
+    footer {
+      margin-top: 2rem;
+      padding: 1.5rem 0 0.5rem;
+      border-top: 2px solid #d8e6dc;
+      color: #444;
+    }
+
+    .footer-details {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      max-width: 56rem;
+    }
+
+    .footer-details p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .copyright {
+      margin-top: 1rem !important;
+      font-size: 0.85rem !important;
+      color: #666;
+    }
+
+    @media (max-width: 42rem) {
+      .footer-details {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body id="top">
+  <header>
+    <a class="site-name" href="#top">Pearl Street Boba</a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#hours">Hours</a>
+      <a href="#location">Location</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Fresh Boba, Made for Your Day</h1>
+    <p>Enjoy fresh tea and soft pearls just steps from campus.</p>
+    <img class="hero-image" src="images/hero.jpg" alt="Colorful boba drinks" />
+    <a href="#menu">View the menu</a>
+  </section>
+
+  <p>Owner: Kai</p>
+
+  <h2 id="about">About</h2>
+  <p>Small boba shop on Pearl Street and 4th. Fresh tea. Soft pearls. Fast orders.</p>
+  <img class="about-image" src="images/layered.jpg" alt="Layered boba tea" />
+
+  <h2 id="menu">Menu</h2>
+  <div class="menu-cards" aria-label="Popular drinks">
+    <article class="menu-card">
+      <img src="images/milk-tea.jpg" alt="Classic milk tea with boba" />
+      <div class="menu-card-content">
+        <h3>Classic Milk Tea</h3>
+        <p>Our smooth, creamy tea with soft boba pearls. $5.50</p>
+      </div>
+    </article>
+
+    <article class="menu-card">
+      <img src="images/brown-sugar-cup.jpg" alt="Brown sugar milk tea" />
+      <div class="menu-card-content">
+        <h3>Brown Sugar Milk Tea</h3>
+        <p>Rich milk tea layered with caramel-like brown sugar. $6.00</p>
+      </div>
+    </article>
+
+    <article class="menu-card">
+      <img src="images/taro.jpg" alt="Taro milk tea" />
+      <div class="menu-card-content">
+        <h3>Taro Milk Tea</h3>
+        <p>A lightly sweet, nutty favorite with a soft purple hue. $6.00</p>
+      </div>
+    </article>
+  </div>
+  <p>Drinks:</p>
+  <ul>
+    <li>Classic Milk Tea with Boba - $5.50</li>
+    <li>Brown Sugar Milk Tea - $6.00</li>
+    <li>Taro Milk Tea - $6.00</li>
+    <li>Matcha Latte with Boba - $6.25</li>
+    <li>Thai Tea - $5.75</li>
+    <li>Mango Green Tea - $5.50</li>
+    <li>Strawberry Fruit Tea - $5.50</li>
+    <li>Honey Lemon Green Tea - $5.25</li>
+    <li>Wintermelon Tea - $5.00</li>
+    <li>Oolong Milk Tea - $5.75</li>
+  </ul>
+
+  <div class="menu-images">
+    <img src="images/milk-tea.jpg" alt="Classic milk tea with boba" />
+    <img src="images/brown-sugar-cup.jpg" alt="Brown sugar milk tea" />
+    <img src="images/brown-sugar.jpg" alt="Brown sugar boba" />
+    <img src="images/taro.jpg" alt="Taro milk tea" />
+    <img src="images/strawberry.jpg" alt="Strawberry fruit tea" />
+  </div>
+
+  <p>Toppings:</p>
+  <ul>
+    <li>Classic boba pearls - +$0.75</li>
+    <li>Brown sugar pearls - +$1.00</li>
+    <li>Lychee jelly - +$0.75</li>
+    <li>Aloe jelly - +$0.75</li>
+    <li>Pudding - +$0.75</li>
+  </ul>
+
+  <p>Sweetness: 0%, 30%, 50%, 70%, or 100%</p>
+  <p>Ice: Extra ice, regular ice, or less ice</p>
+
+  <div class="info-row">
+    <section class="info-block" id="hours">
+      <h2>Hours</h2>
+      <ul class="compact-list">
+        <li>Mon-Wed: 11:00 AM - 8:00 PM</li>
+        <li>Thu-Fri: 11:00 AM - 9:00 PM</li>
+        <li>Sat: 12:00 PM - 9:00 PM</li>
+        <li>Sun: 12:00 PM - 7:00 PM</li>
+      </ul>
+    </section>
+
+    <section class="info-block" id="location">
+      <h2>Location</h2>
+      <ul class="compact-list">
+        <li>418 Pearl Street</li>
+        <li>Across from the campus bookstore</li>
+        <li>Look for the green awning</li>
+      </ul>
+    </section>
+  </div>
+
+  <h2>Deals</h2>
+  <p>Student discount on classic milk tea on weekday afternoons</p>
+
+  <h2 id="contact">Contact</h2>
+  <p>Email: kai@pearlstreetboba.example</p>
+  <p>Phone: (555) 014-2288</p>
+
+  <footer>
+    <div class="footer-details">
+      <p><strong>Visit us</strong><br />418 Pearl Street</p>
+      <p><strong>Call or email</strong><br />(555) 014-2288<br />kai@pearlstreetboba.example</p>
+      <p><strong>Open today</strong><br />Mon-Wed: 11:00 AM - 8:00 PM<br />Thu-Fri: 11:00 AM - 9:00 PM</p>
+    </div>
+    <p class="copyright">&copy; 2026 Pearl Street Boba. Fresh tea, soft pearls.</p>
+  </footer>
+</body>
+</html>
